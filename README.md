@@ -4,6 +4,6 @@
 
 ### Day 2 - Continuation of Code Implementation, Refactoring and Debugging
 
-### Day 3 - Styling
+### Day 3 - Styling and Coupling
 
 ### Day 4 - Final Testing and Deploy
