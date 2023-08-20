@@ -1,14 +1,17 @@
 /* eslint-disable react/prop-types */
-import { useToggleState } from "../../Form"
+import { useAppContext } from "../../App"
+import { useToggleState } from "../../Structures/Form/Form"
 const Plan = ({planName, monthAtm}) => {
   const yearAtm = () => monthAtm * 10
   const {isMonth, setPlan} = useToggleState()
+  const {setPlanNotToggled} = useAppContext()
   
   function getPlanFunc(e){
     const {name, value, ariaLabel} = e.target
     setPlan(prevPlanName => {
       return{ ...prevPlanName, [name]: {name: ariaLabel, price: value}}
     })
+    setPlanNotToggled(false)
   }
   
   return (

@@ -1,19 +1,19 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react"
-import { useToggleState } from "../../Form"
+import { useToggleState } from "../../Structures/Form/Form"
 const AddOns = ({name, addOn, subHead, monthAtm}) => {
-  const {isMonth, addOnPrice, setSelectAddOn} = useToggleState()
-  const yearAtm = () => monthAtm * 10
+  const {isMonth, setSelectAddOn} = useToggleState()
   const [isChecked, setIsChecked] = useState(false)
+  const yearAtm = () => monthAtm * 10
 
   function pushAddOns(e){
     const {name, value, ariaLabel} = e.target;
     setIsChecked(!isChecked)
     setSelectAddOn(prevAddOn =>{
       return{
-        ...prevAddOn, [name]:  {name: isChecked ? "" : ariaLabel, price: isChecked ? "" : value
+        ...prevAddOn, [name]:  {name: isChecked ? "" : ariaLabel, price: isChecked ? 0 : value, displayPrice: isChecked ? "" : `+$${value}/${isMonth? "mo" : "yr"}`
       }
-    }
+     }
     })
   
   }
@@ -33,7 +33,7 @@ const AddOns = ({name, addOn, subHead, monthAtm}) => {
                 <div className="addon__name">{addOn}</div>
                 <div className="addon__subhead">{subHead}</div>
             </div>
-            <div className="addon__price"  ref={addOnPrice}>
+            <div className="addon__price">
                 {`+$${isMonth? `${monthAtm}/mo` : `${yearAtm()}/yr`}`}
             </div>
         </label>
