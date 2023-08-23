@@ -1,0 +1,88 @@
+%align-vertical{
+    @include flex(left, center);
+    flex-direction: column;
+}
+.plan{
+    @extend %align-vertical;
+    gap: 1.5rem;
+
+    &__content{
+        @include flex(left, start);
+        gap: 1.5rem;
+    }
+    &__content{
+        border: 1px solid $Light-gray;
+        border-radius: 1rem;
+        padding: 2rem;
+    }
+    &__name{
+        color: $Marine-blue;
+        font-size: 1.8rem;
+        font-weight: 600;
+        padding-bottom: .5rem;
+    }
+    &__amount{
+        color: $Cool-gray;
+        font-size: 1.6rem;
+        font-weight: 600;
+
+        p:last-child{
+            font-size: 1.4rem;
+            color: $Marine-blue;
+            padding-top: .5rem;
+        }
+    }
+    input{
+        display: none;
+        transition: .5rem;
+        &:checked + .plan__content{
+            border-color: $Purplish-blue;
+            background-color: $Light-gray
+        }
+    }
+}
+
+// DURATION TOGGLE BUTTON
+.plan-switch{
+    @include flex(center, center);
+    background-color: $Alabaster;
+    margin-top: 2.5rem;
+    padding-block: 1.5rem;
+    border-radius: 1rem;
+}
+.toggler{
+    @include flex(center, center);
+    gap: 2rem;
+
+    .duration{
+        font-weight: 600;
+    }
+    .monthly{
+        color: $Marine-blue;
+    }
+    &__bar{
+        position: relative;
+        width: 6rem;
+        height: 3rem;
+        border-radius: 5rem;
+        background-color: $Marine-blue;
+    }
+    &__thumb{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: .5rem;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        background-color: $White;
+        
+    }
+    input{
+        display: none;
+    }
+    input:checked + &__thumb{
+        left: auto;
+        right: .5rem;
+    }
+}

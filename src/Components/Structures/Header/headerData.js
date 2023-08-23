@@ -1,8 +1,8 @@
 export default [
     {
         no: 1,
-        heading: "Personal Info",
-        subheading: "Pleade provide your name, email address, and phone number."
+        heading: "Personal info",
+        subheading: "Please provide your name, email address, and phone number."
     },
     {
         no: 2,

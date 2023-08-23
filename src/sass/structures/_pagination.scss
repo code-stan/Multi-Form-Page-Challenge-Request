@@ -1,0 +1,25 @@
+.pagination{
+    background-image: url("./assets/images/bg-sidebar-mobile.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-block: 4rem 12rem;
+    width: 100%;
+    gap: 2rem;
+    @include flex (center, center);
+    @include lg-screen(50em){
+        background-image: url("./assets/images/bg-sidebar-desktop.svg");
+    }
+
+    &__name{
+        display: none;
+        @include lg-screen(50em){
+            display: block;
+        }
+    }
+    &__no{
+        width: 4rem; height: 4rem;
+        border-radius: 50%;
+        @include flex(center, center);
+        font-weight: 600;
+    }
+}

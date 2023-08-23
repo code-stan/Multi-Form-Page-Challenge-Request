@@ -26,11 +26,11 @@ const Button = () => {
 
   return (
     <div className="changeBtnSection">
-      <div className="cbs__right">
-        <button className="cbs__button--right" style={{opacity: index <= 1 ? 0 : 1, pointerEvents: index <= 1 ? "none" : "auto"}} onClick={prevPage}>Go Back</button>
+      <div className="change__btn">
+        <button className="change__btn--right" style={{opacity: index <= 1 ? 0 : 1, pointerEvents: index <= 1 ? "none" : "auto"}} onClick={prevPage}>Go Back</button>
       </div>
-      <div className="cbs__left">
-        <button className="cbs__button--left" onClick={nextPage} disabled={index === 2 && planNotToggled }>{nextStep}</button>
+      <div className="change__btn">
+        <button type="submit" className="change__btn--left" onClick={nextPage} disabled={index === 2 && planNotToggled }>{nextStep}</button>
       </div>
     </div>
   )

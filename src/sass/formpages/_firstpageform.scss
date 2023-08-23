@@ -1,0 +1,30 @@
+.first-page{
+    @include flex(left, center);
+    // flex-direction: column;
+    // gap: 2rem;
+}
+.user-data{
+    @include flex(left, unset);
+    gap: .4rem;
+    flex-direction: column;
+    
+    &:not(:last-child){
+        padding-bottom: 1.5rem;
+    }
+    &__label{
+        font-size: 1.4rem;
+        color: $Marine-blue;
+        font-weight: 600;
+    }
+    &__input{
+        border-radius: .2rem;
+        border: 1px solid $Light-gray;
+        padding: 1.5rem;
+
+        &::placeholder{
+            font-weight: 600;
+            font-size: 1.6rem;
+            color: $Cool-gray;
+        }
+    }
+}

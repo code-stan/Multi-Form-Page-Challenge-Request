@@ -6,6 +6,8 @@ import Header from "./Structures/Header/Header"
 import Button from "./Structures/Button/Button";
 import Pagination from "./Structures/Pagination/Pagination";
 
+import "../sass/style.scss"
+
 const AppContext = createContext()
 export const useAppContext = () => useContext(AppContext)
 

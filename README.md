@@ -1,4 +1,4 @@
-# 4 DAYS OF BUILDING A SIMPLE MULTI-PAGE FORM (A CHALLENGE FROM FRONTEND MENTOR)
+# 5 DAYS OF BUILDING A SIMPLE MULTI-PAGE FORM (A CHALLENGE FROM FRONTEND MENTOR)
 
 ### Day 1 - Breaking down designs and setting up both markup and functionality
 
@@ -6,4 +6,6 @@
 
 ### Day 3 - Completion of Markup
 
-### Day 4 - Styling, Testing and Deploy
+### Day 4 - Styling
+
+### Day 5 - Validation, Testing and Deploy

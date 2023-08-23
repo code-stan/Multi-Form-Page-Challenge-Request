@@ -30,6 +30,13 @@ const Form = ()=>{
         return{...prevPlan, planName: ""}
       })
       setSelectAddOn({})
+
+      // function toggleColor(){
+      //   let color = "hsl(213, 96%, 18%)"; 
+      //   if(e.target.checked === true){
+      //     return color
+      //   }
+      // }
   }
 
   function durationType(){
@@ -53,45 +60,47 @@ const Form = ()=>{
     <toggleStateControl.Provider value={{isMonth, setPlan, setSelectAddOn, inputChecked, setInputChecked, index}}>
       <main>
         <form className="form">
-          <div className="first-page">
+          <section className="first-page" style={{display: index === 1? "block": "none"}}>
             {
               labelInputData.map((data, i) =>{
                 return <FirstPageForm key={i} {...data}/>
                 
               })
             }
-          </div>
-          <div className="second-page">
-            {
-              planData.map((data, i) => {
-                return <Plan key={i} {...data}/>
-              })
-            }
+          </section>
+          <section className="second-page" style={{display: index === 2? "block": "none"}}>
+            <div className="plan">
+              {
+                planData.map((data, i) => {
+                  return <Plan key={i} {...data}/>
+                })
+              }
+            </div>
             <div className="plan-switch">
               <label htmlFor="toggler" className="toggler">
-                <span className="monthly">Monthly</span>
-                <div className="toggler-bar">
+                <span className="monthly duration">Monthly</span>
+                <div className="toggler__bar">
                   <input type="checkbox" className="checkbox" id="toggler" onChange={togglePlan}/>
-                  <div className="toggler-thumb"></div>
+                  <div className="toggler__thumb"></div>
                 </div>
-                <span className="yearly">Yearly</span>
+                <span className="yearly duration" >Yearly</span>
               </label>
             </div>
-
-          </div>
-          <div className="third-page" >
+          </section>
+          <div className="third-page" style={{display: index === 3? "block": "none"}}>
             {
               addOn.map((data, i) => {
                 return <AddOnsComp key={i} {...data}/>
               })
             }
           </div>
-          <div className="last-page total-page" >
+          <div className="last-page total-page" style={{display: index === 4? "block": "none"}}>
 
              {/* Displays Plan Selected */}
             {
               Object.keys(plan).map((prop)=>{
                 let planContent = plan[prop]
+                console.log(planContent)
                 return(
                   <div className="plan__selected" key={prop}>
                     <div className="result-name">

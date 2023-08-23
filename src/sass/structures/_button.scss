@@ -1,0 +1,30 @@
+.changeBtnSection{
+    position: fixed;
+    bottom: 0;
+    background-color: $White;
+    width: 100%;
+    padding: 2rem;
+    margin-top: 5rem;
+    @include flex(center, space-between)
+}
+.change__btn{
+    & button{
+        padding: 1.2rem 1.5rem;
+        font-weight: 700;
+    }
+    &--right{
+        color: $Cool-gray;
+        background-color: transparent;
+    }
+    &--left{
+        color: $Alabaster;
+        background-color: $Marine-blue;
+        border-radius: .3rem;
+        transition: .3s;
+    }
+    &--left:disabled{
+        color: rgba($color: $Marine-blue, $alpha: 0.5);
+        background-color: unset;
+
+    }
+}

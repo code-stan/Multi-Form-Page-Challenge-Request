@@ -7,11 +7,11 @@ const AddOns = ({name, addOn, subHead, monthAtm}) => {
   const yearAtm = () => monthAtm * 10
 
   function pushAddOns(e){
-    const {name, value, ariaLabel} = e.target;
+    const {name, value, id} = e.target;
     setIsChecked(!isChecked)
     setSelectAddOn(prevAddOn =>{
       return{
-        ...prevAddOn, [name]:  {name: isChecked ? "" : ariaLabel, price: isChecked ? 0 : value, displayPrice: isChecked ? "" : `+$${value}/${isMonth? "mo" : "yr"}`
+        ...prevAddOn, [name]:  {name: isChecked ? "" : id, price: isChecked ? 0 : value, displayPrice: isChecked ? "" : `+$${value}/${isMonth? "mo" : "yr"}`
       }
      }
     })
@@ -20,12 +20,12 @@ const AddOns = ({name, addOn, subHead, monthAtm}) => {
 
   return (
     <div className="addOn-item">
-        <label htmlFor={`${addOn}-addon`}>
+        <label htmlFor={addOn}>
 
             <input type="checkbox" 
             name={name} 
             onChange={pushAddOns} 
-            id={`${addOn}-addon`} 
+            id={addOn} 
             value={isMonth? monthAtm : yearAtm()} 
             aria-label={addOn}/>
 
