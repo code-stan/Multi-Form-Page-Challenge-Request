@@ -51,14 +51,19 @@
     border-radius: 1rem;
 }
 .toggler{
-    @include flex(center, center);
-    gap: 2rem;
-
+    
+    &__children{
+        @include flex(center, center);
+        gap: 2rem;
+    }
     .duration{
         font-weight: 600;
     }
     .monthly{
         color: $Marine-blue;
+    }
+    .yearly{
+        color: $Cool-gray;
     }
     &__bar{
         position: relative;
@@ -81,8 +86,14 @@
     input{
         display: none;
     }
-    input:checked + &__thumb{
+    input:checked + &__children &__thumb{
         left: auto;
         right: .5rem;
+    }
+    input:checked + &__children .yearly{
+        color: $Marine-blue;
+    }
+    input:checked + &__children .monthly{
+        color: $Cool-gray
     }
 }

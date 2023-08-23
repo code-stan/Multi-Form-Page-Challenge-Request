@@ -78,12 +78,14 @@ const Form = ()=>{
             </div>
             <div className="plan-switch">
               <label htmlFor="toggler" className="toggler">
-                <span className="monthly duration">Monthly</span>
-                <div className="toggler__bar">
-                  <input type="checkbox" className="checkbox" id="toggler" onChange={togglePlan}/>
-                  <div className="toggler__thumb"></div>
+                <input type="checkbox" className="checkbox" id="toggler" onChange={togglePlan}/>
+                <div className="toggler__children">
+                  <span className="monthly duration">Monthly</span>
+                  <div className="toggler__bar">
+                    <div className="toggler__thumb"></div>
+                  </div>
+                  <span className="yearly duration" >Yearly</span>
                 </div>
-                <span className="yearly duration" >Yearly</span>
               </label>
             </div>
           </section>
