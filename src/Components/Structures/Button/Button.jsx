@@ -30,7 +30,7 @@ const Button = () => {
         <button className="change__btn--right" style={{opacity: index <= 1 ? 0 : 1, pointerEvents: index <= 1 ? "none" : "auto"}} onClick={prevPage}>Go Back</button>
       </div>
       <div className="change__btn">
-        <button type="submit" className="change__btn--left" onClick={nextPage} disabled={index === 2 && planNotToggled }>{nextStep}</button>
+        <button type="submit" className="change__btn--left" onClick={nextPage} disabled={index === 2 && planNotToggled } style={{backgroundColor: index === 4? "hsl(243, 100%, 62%)" : "hsl(213, 96%, 18%)"}}>{nextStep}</button>
       </div>
     </div>
   )

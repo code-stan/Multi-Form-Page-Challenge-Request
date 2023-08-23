@@ -19,25 +19,23 @@ const AddOns = ({name, addOn, subHead, monthAtm}) => {
   }
 
   return (
-    <div className="addOn-item">
-        <label htmlFor={addOn}>
-
-            <input type="checkbox" 
-            name={name} 
-            onChange={pushAddOns} 
-            id={addOn} 
-            value={isMonth? monthAtm : yearAtm()} 
-            aria-label={addOn}/>
-
+    <label htmlFor={addOn} >
+          <input type="checkbox" 
+          name={name} 
+          onChange={pushAddOns} 
+          id={addOn} 
+          value={isMonth? monthAtm : yearAtm()} 
+          aria-label={addOn}/>
+          <div className="addon-item">
             <div className="addon-content">
-                <div className="addon__name">{addOn}</div>
-                <div className="addon__subhead">{subHead}</div>
+                <div className="addon-name">{addOn}</div>
+                <div className="addon-subhead">{subHead}</div>
             </div>
-            <div className="addon__price">
+            <div className="addon-price">
                 {`+$${isMonth? `${monthAtm}/mo` : `${yearAtm()}/yr`}`}
             </div>
-        </label>
-    </div>
+          </div>
+    </label>
   ) 
 }
 

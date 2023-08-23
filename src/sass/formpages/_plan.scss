@@ -1,7 +1,3 @@
-%align-vertical{
-    @include flex(left, center);
-    flex-direction: column;
-}
 .plan{
     @extend %align-vertical;
     gap: 1.5rem;
@@ -11,20 +7,13 @@
         gap: 1.5rem;
     }
     &__content{
-        border: 1px solid $Light-gray;
-        border-radius: 1rem;
-        padding: 2rem;
+        @extend %unchecked;
     }
     &__name{
-        color: $Marine-blue;
-        font-size: 1.8rem;
-        font-weight: 600;
-        padding-bottom: .5rem;
+        @extend %option-style-head;
     }
     &__amount{
-        color: $Cool-gray;
-        font-size: 1.6rem;
-        font-weight: 600;
+        @extend %option-style-subhead;
 
         p:last-child{
             font-size: 1.4rem;
@@ -36,8 +25,7 @@
         display: none;
         transition: .5rem;
         &:checked + .plan__content{
-            border-color: $Purplish-blue;
-            background-color: $Light-gray
+           @extend %checked;
         }
     }
 }

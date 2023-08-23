@@ -17,6 +17,30 @@ $White: hsl(0, 0%, 100%);
     justify-content: $justify;
 }
 
+%checked{
+    border-color: $Purplish-blue;
+    background-color: $Light-gray
+}
+%unchecked{
+    border: 1px solid $Light-gray;
+    border-radius: 1rem;
+    padding: 1.5rem;
+}
+%align-vertical{
+    @include flex(left, center);
+    flex-direction: column;
+}
+%option-style-head{
+    color: $Marine-blue;
+    font-size: 1.8rem;
+    font-weight: 600;
+    padding-bottom: .5rem;
+}
+%option-style-subhead{
+    color: $Cool-gray;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
 //MEDIA
 @mixin sm-screen($size){
     @media(width < $size){

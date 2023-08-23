@@ -89,46 +89,48 @@ const Form = ()=>{
               </label>
             </div>
           </section>
-          <div className="third-page" style={{display: index === 3? "block": "none"}}>
+          <section className="third-page" style={{display: index === 3? "block": "none"}}>
             {
               addOn.map((data, i) => {
                 return <AddOnsComp key={i} {...data}/>
               })
             }
-          </div>
-          <div className="last-page total-page" style={{display: index === 4? "block": "none"}}>
-
-             {/* Displays Plan Selected */}
-            {
-              Object.keys(plan).map((prop)=>{
-                let planContent = plan[prop]
-                console.log(planContent)
-                return(
-                  <div className="plan__selected" key={prop}>
-                    <div className="result-name">
-                      <p className="selected">
-                        {planContent.name}<span>{isMonth? "(Monthly)" : "(Yearly)"}</span>
-                      </p>
-                      <button type="button" onClick={()=> {setIndex(2); console.log(index) }}>change</button>
+          </section>
+          <section className="last-page total-page" style={{display: index === 4? "block": "none"}}>
+            <div className="selections">
+              {/* Displays Plan Selected */}
+              {
+                Object.keys(plan).map((prop)=>{
+                  let planContent = plan[prop]
+                  console.log(planContent)
+                  return(
+                    <div className="plan-selected" key={prop}>
+                      <div className="result-name">
+                        <p className="selected">
+                          {planContent.name} <span>{isMonth? "(Monthly)" : "(Yearly)"}</span>
+                        </p>
+                        <button type="button" onClick={()=> {setIndex(2)}}>Change</button>
+                      </div>
+                      <div className="result-price">${planContent.price}/{durationType()}</div>
                     </div>
-                    <div className="result-price">${planContent.price}/{durationType()}</div>
-                  </div>
-                )
-              })
-            }
+                  )
+                })
+              }
 
-             {/* Displays AddOns Selected */}
-            <div className="addOn__selected">
-                {Object.keys(selectAddOn).map((prop) => {
-                  let addon = selectAddOn[prop];
-                  return (
-                    <div className="selected-addon" key={prop}>
-                      <p className="selected-addon__name">{addon.name}</p>
-                      <p className="selected-addon__price">{addon.displayPrice}</p>
-                    </div>
-                  );
-                })}
-             </div>
+              {/* Displays AddOns Selected */}
+              <div className="addon-selected">
+                  {Object.keys(selectAddOn).map((prop) => {
+                    let addon = selectAddOn[prop];
+                    return (
+                      <div className="selected-addon" key={prop}>
+                        <p className="selected-addon__name">{addon.name}</p>
+                        <p className="selected-addon__price">{addon.displayPrice}</p>
+                      </div>
+                    );
+                  })}
+              </div>
+
+            </div>
 
               {/*Displays Total Pricing*/}
              <div className="total">
@@ -137,7 +139,7 @@ const Form = ()=>{
                   ${calculateTotalPricing()}/{durationType()}
                 </div>
              </div>
-          </div>
+          </section>
           
         </form>
       </main>
