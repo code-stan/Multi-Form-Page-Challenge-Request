@@ -12,7 +12,6 @@ dist
 dist-ssr
 *.local
 
-public/design
 README-template.md
 
 # Editor directories and files
